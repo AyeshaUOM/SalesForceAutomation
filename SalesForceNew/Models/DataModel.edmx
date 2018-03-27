@@ -1,0 +1,2688 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CompetitorItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Category" Type="varchar" MaxLength="50" />
+          <Property Name="Brand" Type="varchar" MaxLength="50" />
+          <Property Name="RetailPrice" Type="float" />
+        </EntityType>
+        <EntityType Name="Expenses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
+          <Property Name="Amount" Type="float" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="Images">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
+          <Property Name="Image" Type="varchar" MaxLength="25" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="Leave">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StartingDate" Type="varchar" MaxLength="50" />
+          <Property Name="EndingDate" Type="varchar" MaxLength="50" />
+          <Property Name="Reason" Type="varchar" MaxLength="100" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="LoginDevice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeviceKey" Type="varchar" MaxLength="25" />
+          <Property Name="BatteryLevel" Type="float" />
+          <Property Name="NetworkStatus" Type="float" />
+          <Property Name="Location" Type="varchar" MaxLength="25" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Messages" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="varchar" MaxLength="20" />
+          <Property Name="Remarks" Type="varchar" MaxLength="100" />
+          <Property Name="DeliveryDate" Type="varchar" MaxLength="20" />
+          <Property Name="DeliveredDate" Type="datetime" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="OrderType" Type="varchar" MaxLength="20" />
+          <Property Name="OutletId" Type="int" />
+          <Property Name="Longitude" Type="float" />
+          <Property Name="Latitude" Type="float" />
+          <Property Name="Date2" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Outlets">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="10" />
+          <Property Name="Barcode" Type="varchar" MaxLength="25" />
+          <Property Name="Longitude" Type="float" />
+          <Property Name="Latitude" Type="float" />
+          <Property Name="OwnerName" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="20" />
+          <Property Name="RouteId" Type="int" />
+        </EntityType>
+        <EntityType Name="Outstanding">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="varchar" MaxLength="50" />
+          <Property Name="OutletId" Type="int" />
+          <Property Name="Amount" Type="float" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="25" />
+          <Property Name="Amount" Type="float" />
+          <Property Name="OrderId" Type="int" />
+        </EntityType>
+        <EntityType Name="POSM">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Quantity" Type="int" />
+        </EntityType>
+        <EntityType Name="Privilage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Brand" Type="varchar" MaxLength="50" />
+          <Property Name="Category" Type="varchar" MaxLength="50" />
+          <Property Name="ManufacturePrice" Type="float" />
+          <Property Name="RetailPrice" Type="float" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="DiscountType" Type="float" />
+          <Property Name="Image" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ProductCompetitorItems">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="CompetitorItemsId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="CompetitorItemsId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Qualifications">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="Qualification" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ReceiveMessages">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="MessageId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="Route">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="RouteHasOutlets">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="VisitStatus" Type="varchar" MaxLength="10" />
+          <Property Name="OutletId" Type="int" />
+          <Property Name="VanId" Type="int" />
+        </EntityType>
+        <EntityType Name="SendMessages">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="MessageId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NIC" Type="varchar" MaxLength="10" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Passwords" Type="varchar" MaxLength="25" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="ResidenceNo" Type="varchar" MaxLength="10" />
+          <Property Name="Lane" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="10" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Gender" Type="varchar" MaxLength="6" />
+          <Property Name="UserType" Type="varchar" MaxLength="50" />
+          <Property Name="Image" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Van">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VanType" Type="varchar" MaxLength="50" />
+          <Property Name="RegistrationNo" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="VanOrderProducts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="ProductQuantity" Type="int" />
+          <Property Name="OrderType" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="VanPOSM">
+          <Key>
+            <PropertyRef Name="VanId" />
+            <PropertyRef Name="POSMId" />
+          </Key>
+          <Property Name="VanId" Type="int" Nullable="false" />
+          <Property Name="POSMId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VanProducts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VanId" Type="int" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="VanQuantity" Type="int" />
+        </EntityType>
+        <Association Name="FK__Expenses__UserId__2EDAF651">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Expenses" Type="Self.Expenses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Expenses">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Images__UserId__2FCF1A8A">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Images" Type="Self.Images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Images">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Leave__UserId__30C33EC3">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Leave" Type="Self.Leave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Leave">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LoginDevi__UserI__31B762FC">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="LoginDevice" Type="Self.LoginDevice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LoginDevice">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__OutletId__339FAB6E">
+          <End Role="Outlets" Type="Self.Outlets" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Outlets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="OutletId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__UserId__32AB8735">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Outlets__RouteId__3493CFA7">
+          <End Role="Route" Type="Self.Route" Multiplicity="0..1" />
+          <End Role="Outlets" Type="Self.Outlets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Outlets">
+              <PropertyRef Name="RouteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Outstandi__Outle__3587F3E0">
+          <End Role="Outlets" Type="Self.Outlets" Multiplicity="0..1" />
+          <End Role="Outstanding" Type="Self.Outstanding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Outlets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Outstanding">
+              <PropertyRef Name="OutletId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payment__OrderId__367C1819">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductCo__Compe__3864608B">
+          <End Role="CompetitorItems" Type="Self.CompetitorItems" Multiplicity="1" />
+          <End Role="ProductCompetitorItems" Type="Self.ProductCompetitorItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CompetitorItems">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductCompetitorItems">
+              <PropertyRef Name="CompetitorItemsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductCo__Produ__37703C52">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductCompetitorItems" Type="Self.ProductCompetitorItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductCompetitorItems">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Qualifica__UserI__395884C4">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Qualifications" Type="Self.Qualifications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Qualifications">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ReceiveMe__Messa__3B40CD36">
+          <End Role="Messages" Type="Self.Messages" Multiplicity="1" />
+          <End Role="ReceiveMessages" Type="Self.ReceiveMessages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Messages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReceiveMessages">
+              <PropertyRef Name="MessageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ReceiveMe__UserI__3A4CA8FD">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="ReceiveMessages" Type="Self.ReceiveMessages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReceiveMessages">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Role__UserId__3C34F16F">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Role" Type="Self.Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Role">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RouteHasO__Outle__3E1D39E1">
+          <End Role="Outlets" Type="Self.Outlets" Multiplicity="0..1" />
+          <End Role="RouteHasOutlets" Type="Self.RouteHasOutlets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Outlets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RouteHasOutlets">
+              <PropertyRef Name="OutletId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RouteHasO__UserI__3D2915A8">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="RouteHasOutlets" Type="Self.RouteHasOutlets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RouteHasOutlets">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RouteHasO__VanId__3F115E1A">
+          <End Role="Van" Type="Self.Van" Multiplicity="0..1" />
+          <End Role="RouteHasOutlets" Type="Self.RouteHasOutlets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Van">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RouteHasOutlets">
+              <PropertyRef Name="VanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SendMessa__Messa__40F9A68C">
+          <End Role="Messages" Type="Self.Messages" Multiplicity="1" />
+          <End Role="SendMessages" Type="Self.SendMessages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Messages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SendMessages">
+              <PropertyRef Name="MessageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SendMessa__UserI__40058253">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="SendMessages" Type="Self.SendMessages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SendMessages">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VanOrderP__Order__41EDCAC5">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="VanOrderProducts" Type="Self.VanOrderProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VanOrderProducts">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VanOrderP__Produ__42E1EEFE">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="VanOrderProducts" Type="Self.VanOrderProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VanOrderProducts">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VanPOSM__POSMId__44CA3770">
+          <End Role="POSM" Type="Self.POSM" Multiplicity="1" />
+          <End Role="VanPOSM" Type="Self.VanPOSM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POSM">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VanPOSM">
+              <PropertyRef Name="POSMId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VanPOSM__VanId__43D61337">
+          <End Role="Van" Type="Self.Van" Multiplicity="1" />
+          <End Role="VanPOSM" Type="Self.VanPOSM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Van">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VanPOSM">
+              <PropertyRef Name="VanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VanProduc__Produ__45BE5BA9">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="VanProducts" Type="Self.VanProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VanProducts">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VanProduc__VanId__46B27FE2">
+          <End Role="Van" Type="Self.Van" Multiplicity="0..1" />
+          <End Role="VanProducts" Type="Self.VanProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Van">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VanProducts">
+              <PropertyRef Name="VanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="AddExpense" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="Date" Type="varchar" Mode="In" />
+          <Parameter Name="Description" Type="varchar" Mode="In" />
+          <Parameter Name="Amount" Type="float" Mode="In" />
+        </Function>
+        <Function Name="AddLeave" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StartingDate" Type="varchar" Mode="In" />
+          <Parameter Name="EndingDate" Type="varchar" Mode="In" />
+          <Parameter Name="Reason" Type="varchar" Mode="In" />
+          <Parameter Name="UserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AddOutletsOfRoutes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RouteId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AddProductsToVan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VanId" Type="int" Mode="In" />
+          <Parameter Name="ProductId" Type="int" Mode="In" />
+          <Parameter Name="VanQuantity" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AddVanProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VanId" Type="int" Mode="In" />
+          <Parameter Name="ProductId" Type="int" Mode="In" />
+          <Parameter Name="VanQuantity" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AllOutletsDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="AvailableVanProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VanId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CreateOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Date" Type="varchar" Mode="In" />
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="OutletId" Type="int" Mode="In" />
+          <Parameter Name="DeliveryDate" Type="varchar" Mode="In" />
+          <Parameter Name="Remarks" Type="varchar" Mode="In" />
+          <Parameter Name="Longitude" Type="float" Mode="In" />
+          <Parameter Name="Latitude" Type="float" Mode="In" />
+        </Function>
+        <Function Name="CreateOutlet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="ContactNo" Type="varchar" Mode="In" />
+          <Parameter Name="Barcode" Type="varchar" Mode="In" />
+          <Parameter Name="Longitude" Type="float" Mode="In" />
+          <Parameter Name="Latitude" Type="float" Mode="In" />
+          <Parameter Name="OwnerName" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="varchar" Mode="In" />
+          <Parameter Name="RouteId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CreateOutstanding" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Date" Type="varchar" Mode="In" />
+          <Parameter Name="OutletId" Type="int" Mode="In" />
+          <Parameter Name="Amount" Type="float" Mode="In" />
+        </Function>
+        <Function Name="CreatePayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OrderId" Type="int" Mode="In" />
+          <Parameter Name="PaymentType" Type="varchar" Mode="In" />
+          <Parameter Name="Amount" Type="float" Mode="In" />
+        </Function>
+        <Function Name="CreateProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Brand" Type="varchar" Mode="In" />
+          <Parameter Name="Category" Type="varchar" Mode="In" />
+          <Parameter Name="ManufacturePrice" Type="float" Mode="In" />
+          <Parameter Name="RetailPrice" Type="float" Mode="In" />
+          <Parameter Name="Quantity" Type="int" Mode="In" />
+          <Parameter Name="DiscountType" Type="float" Mode="In" />
+        </Function>
+        <Function Name="createProductsToVan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VanId" Type="int" Mode="In" />
+          <Parameter Name="ProductId" Type="int" Mode="In" />
+          <Parameter Name="VanQuantity" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CreateRoute" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Description" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CreateRouteHasOutlets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Date" Type="datetime" Mode="In" />
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="OutletId" Type="int" Mode="In" />
+          <Parameter Name="VanId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CreateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NIC" Type="varchar" Mode="In" />
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="ResidenceNo" Type="varchar" Mode="In" />
+          <Parameter Name="Lane" Type="varchar" Mode="In" />
+          <Parameter Name="City" Type="varchar" Mode="In" />
+          <Parameter Name="ContactNo" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Gender" Type="varchar" Mode="In" />
+          <Parameter Name="UserType" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CreateVan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VanType" Type="varchar" Mode="In" />
+          <Parameter Name="RegistrationNo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CreateVanOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Date" Type="varchar" Mode="In" />
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="OutletId" Type="int" Mode="In" />
+          <Parameter Name="Remarks" Type="varchar" Mode="In" />
+          <Parameter Name="Longitude" Type="float" Mode="In" />
+          <Parameter Name="Latitude" Type="float" Mode="In" />
+        </Function>
+        <Function Name="CreateVanOrderProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OrderId" Type="int" Mode="In" />
+          <Parameter Name="productId" Type="int" Mode="In" />
+          <Parameter Name="ProductQuantity" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CreateVanOrderProducts2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OrderId" Type="int" Mode="In" />
+          <Parameter Name="productId" Type="int" Mode="In" />
+          <Parameter Name="ProductQuantity" Type="int" Mode="In" />
+          <Parameter Name="OrderType" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="DeleteProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteRoute" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteVan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ExpensesDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetOrderId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Date" Type="varchar" Mode="In" />
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="OutletId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetProductPrice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetVanId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="LatestOutstanding" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OutletId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="LeaveDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="OrderedProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OutletId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="OutletDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="OutletsOfTheRoute" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RouteId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="OutletsSalesSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OutletId" Type="int" Mode="In" />
+          <Parameter Name="Month" Type="int" Mode="In" />
+          <Parameter Name="Year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="OutstandingDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OutletId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="RouteDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="RouteDetailsById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="RoutesSalesSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RouteId" Type="int" Mode="In" />
+          <Parameter Name="Month" Type="int" Mode="In" />
+          <Parameter Name="Year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateExpenses" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ExpenseId" Type="int" Mode="In" />
+          <Parameter Name="status" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateLeave" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="status" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateOutlets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="ContactNo" Type="varchar" Mode="In" />
+          <Parameter Name="Longitude" Type="float" Mode="In" />
+          <Parameter Name="Latitude" Type="float" Mode="In" />
+          <Parameter Name="OwnerName" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="varchar" Mode="In" />
+          <Parameter Name="RouteId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Brand" Type="varchar" Mode="In" />
+          <Parameter Name="Category" Type="varchar" Mode="In" />
+          <Parameter Name="ManufacturePrice" Type="float" Mode="In" />
+          <Parameter Name="RetailPrice" Type="float" Mode="In" />
+          <Parameter Name="Quantity" Type="int" Mode="In" />
+          <Parameter Name="DiscountType" Type="float" Mode="In" />
+        </Function>
+        <Function Name="UpdateProductAfterOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductQuantity" Type="int" Mode="In" />
+          <Parameter Name="ProductId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateRoute" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Description" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="NIC" Type="varchar" Mode="In" />
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Passwords" Type="varchar" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="ResidenceNo" Type="varchar" Mode="In" />
+          <Parameter Name="Lane" Type="varchar" Mode="In" />
+          <Parameter Name="City" Type="varchar" Mode="In" />
+          <Parameter Name="ContactNo" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="UserType" Type="varchar" Mode="In" />
+          <Parameter Name="Gender" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateVan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="VanType" Type="varchar" Mode="In" />
+          <Parameter Name="RegistrationNo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateVanProductAfterOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductQuantity" Type="int" Mode="In" />
+          <Parameter Name="ProductId" Type="int" Mode="In" />
+          <Parameter Name="VanId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UserById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UserDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="UsersExpensesDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UsersLeaveDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UsersOutlets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UsersSalesSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="Month" Type="int" Mode="In" />
+          <Parameter Name="Year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UsersTodayOutelts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UsersVanProductDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="OutletId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="VanDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="VanDetailsById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="VanProductDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VanId" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="CompetitorItems" EntityType="Self.CompetitorItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Expenses" EntityType="Self.Expenses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Images" EntityType="Self.Images" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Leave" EntityType="Self.Leave" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginDevice" EntityType="Self.LoginDevice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Outlets" EntityType="Self.Outlets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Outstanding" EntityType="Self.Outstanding" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="POSM" EntityType="Self.POSM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Privilage" EntityType="Self.Privilage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductCompetitorItems" EntityType="Self.ProductCompetitorItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Qualifications" EntityType="Self.Qualifications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReceiveMessages" EntityType="Self.ReceiveMessages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Route" EntityType="Self.Route" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RouteHasOutlets" EntityType="Self.RouteHasOutlets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SendMessages" EntityType="Self.SendMessages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Van" EntityType="Self.Van" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VanOrderProducts" EntityType="Self.VanOrderProducts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VanPOSM" EntityType="Self.VanPOSM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VanProducts" EntityType="Self.VanProducts" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Expenses__UserId__2EDAF651" Association="Self.FK__Expenses__UserId__2EDAF651">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Expenses" EntitySet="Expenses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Images__UserId__2FCF1A8A" Association="Self.FK__Images__UserId__2FCF1A8A">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Images" EntitySet="Images" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Leave__UserId__30C33EC3" Association="Self.FK__Leave__UserId__30C33EC3">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Leave" EntitySet="Leave" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LoginDevi__UserI__31B762FC" Association="Self.FK__LoginDevi__UserI__31B762FC">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="LoginDevice" EntitySet="LoginDevice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__OutletId__339FAB6E" Association="Self.FK__Orders__OutletId__339FAB6E">
+            <End Role="Outlets" EntitySet="Outlets" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__UserId__32AB8735" Association="Self.FK__Orders__UserId__32AB8735">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Outlets__RouteId__3493CFA7" Association="Self.FK__Outlets__RouteId__3493CFA7">
+            <End Role="Route" EntitySet="Route" />
+            <End Role="Outlets" EntitySet="Outlets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Outstandi__Outle__3587F3E0" Association="Self.FK__Outstandi__Outle__3587F3E0">
+            <End Role="Outlets" EntitySet="Outlets" />
+            <End Role="Outstanding" EntitySet="Outstanding" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payment__OrderId__367C1819" Association="Self.FK__Payment__OrderId__367C1819">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Payment" EntitySet="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductCo__Compe__3864608B" Association="Self.FK__ProductCo__Compe__3864608B">
+            <End Role="CompetitorItems" EntitySet="CompetitorItems" />
+            <End Role="ProductCompetitorItems" EntitySet="ProductCompetitorItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductCo__Produ__37703C52" Association="Self.FK__ProductCo__Produ__37703C52">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductCompetitorItems" EntitySet="ProductCompetitorItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Qualifica__UserI__395884C4" Association="Self.FK__Qualifica__UserI__395884C4">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Qualifications" EntitySet="Qualifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ReceiveMe__Messa__3B40CD36" Association="Self.FK__ReceiveMe__Messa__3B40CD36">
+            <End Role="Messages" EntitySet="Messages" />
+            <End Role="ReceiveMessages" EntitySet="ReceiveMessages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ReceiveMe__UserI__3A4CA8FD" Association="Self.FK__ReceiveMe__UserI__3A4CA8FD">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ReceiveMessages" EntitySet="ReceiveMessages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Role__UserId__3C34F16F" Association="Self.FK__Role__UserId__3C34F16F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Role" EntitySet="Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RouteHasO__Outle__3E1D39E1" Association="Self.FK__RouteHasO__Outle__3E1D39E1">
+            <End Role="Outlets" EntitySet="Outlets" />
+            <End Role="RouteHasOutlets" EntitySet="RouteHasOutlets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RouteHasO__UserI__3D2915A8" Association="Self.FK__RouteHasO__UserI__3D2915A8">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="RouteHasOutlets" EntitySet="RouteHasOutlets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RouteHasO__VanId__3F115E1A" Association="Self.FK__RouteHasO__VanId__3F115E1A">
+            <End Role="Van" EntitySet="Van" />
+            <End Role="RouteHasOutlets" EntitySet="RouteHasOutlets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SendMessa__Messa__40F9A68C" Association="Self.FK__SendMessa__Messa__40F9A68C">
+            <End Role="Messages" EntitySet="Messages" />
+            <End Role="SendMessages" EntitySet="SendMessages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SendMessa__UserI__40058253" Association="Self.FK__SendMessa__UserI__40058253">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="SendMessages" EntitySet="SendMessages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VanOrderP__Order__41EDCAC5" Association="Self.FK__VanOrderP__Order__41EDCAC5">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="VanOrderProducts" EntitySet="VanOrderProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VanOrderP__Produ__42E1EEFE" Association="Self.FK__VanOrderP__Produ__42E1EEFE">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="VanOrderProducts" EntitySet="VanOrderProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VanPOSM__POSMId__44CA3770" Association="Self.FK__VanPOSM__POSMId__44CA3770">
+            <End Role="POSM" EntitySet="POSM" />
+            <End Role="VanPOSM" EntitySet="VanPOSM" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VanPOSM__VanId__43D61337" Association="Self.FK__VanPOSM__VanId__43D61337">
+            <End Role="Van" EntitySet="Van" />
+            <End Role="VanPOSM" EntitySet="VanPOSM" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VanProduc__Produ__45BE5BA9" Association="Self.FK__VanProduc__Produ__45BE5BA9">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="VanProducts" EntitySet="VanProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VanProduc__VanId__46B27FE2" Association="Self.FK__VanProduc__VanId__46B27FE2">
+            <End Role="Van" EntitySet="Van" />
+            <End Role="VanProducts" EntitySet="VanProducts" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CompetitorItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RetailPrice" Type="Double" />
+          <NavigationProperty Name="Products" Relationship="Self.ProductCompetitorItems" FromRole="CompetitorItems" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Expens">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Double" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Expenses__UserId__2EDAF651" FromRole="Expenses" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Image1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Images__UserId__2FCF1A8A" FromRole="Images" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Leave">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StartingDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EndingDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Leave__UserId__30C33EC3" FromRole="Leave" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="LoginDevice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceKey" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="BatteryLevel" Type="Double" />
+          <Property Name="NetworkStatus" Type="Double" />
+          <Property Name="Location" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK__LoginDevi__UserI__31B762FC" FromRole="LoginDevice" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Messages" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Users" Relationship="Self.ReceiveMessages" FromRole="Messages" ToRole="Users" />
+          <NavigationProperty Name="Users1" Relationship="Self.SendMessages" FromRole="Messages" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryDate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveredDate" Type="DateTime" Precision="3" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="OrderType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="OutletId" Type="Int32" />
+          <Property Name="Longitude" Type="Double" />
+          <Property Name="Latitude" Type="Double" />
+          <Property Name="Date2" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Outlet" Relationship="Self.FK__Orders__OutletId__339FAB6E" FromRole="Orders" ToRole="Outlets" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Orders__UserId__32AB8735" FromRole="Orders" ToRole="Users" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK__Payment__OrderId__367C1819" FromRole="Orders" ToRole="Payment" />
+          <NavigationProperty Name="VanOrderProducts" Relationship="Self.FK__VanOrderP__Order__41EDCAC5" FromRole="Orders" ToRole="VanOrderProducts" />
+        </EntityType>
+        <EntityType Name="Outlet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Barcode" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Longitude" Type="Double" />
+          <Property Name="Latitude" Type="Double" />
+          <Property Name="OwnerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RouteId" Type="Int32" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__OutletId__339FAB6E" FromRole="Outlets" ToRole="Orders" />
+          <NavigationProperty Name="Route" Relationship="Self.FK__Outlets__RouteId__3493CFA7" FromRole="Outlets" ToRole="Route" />
+          <NavigationProperty Name="Outstandings" Relationship="Self.FK__Outstandi__Outle__3587F3E0" FromRole="Outlets" ToRole="Outstanding" />
+          <NavigationProperty Name="RouteHasOutlets" Relationship="Self.FK__RouteHasO__Outle__3E1D39E1" FromRole="Outlets" ToRole="RouteHasOutlets" />
+        </EntityType>
+        <EntityType Name="Outstanding">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OutletId" Type="Int32" />
+          <Property Name="Amount" Type="Double" />
+          <NavigationProperty Name="Outlet" Relationship="Self.FK__Outstandi__Outle__3587F3E0" FromRole="Outstanding" ToRole="Outlets" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Double" />
+          <Property Name="OrderId" Type="Int32" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__Payment__OrderId__367C1819" FromRole="Payment" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="POSM">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <NavigationProperty Name="Vans" Relationship="Self.VanPOSM" FromRole="POSM" ToRole="Van" />
+        </EntityType>
+        <EntityType Name="Privilage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ManufacturePrice" Type="Double" />
+          <Property Name="RetailPrice" Type="Double" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="DiscountType" Type="Double" />
+          <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="VanOrderProducts" Relationship="Self.FK__VanOrderP__Produ__42E1EEFE" FromRole="Product" ToRole="VanOrderProducts" />
+          <NavigationProperty Name="VanProducts" Relationship="Self.FK__VanProduc__Produ__45BE5BA9" FromRole="Product" ToRole="VanProducts" />
+          <NavigationProperty Name="CompetitorItems" Relationship="Self.ProductCompetitorItems" FromRole="Product" ToRole="CompetitorItems" />
+        </EntityType>
+        <EntityType Name="Qualification">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="Qualification1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Qualifica__UserI__395884C4" FromRole="Qualifications" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Role__UserId__3C34F16F" FromRole="Role" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Route">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Outlets" Relationship="Self.FK__Outlets__RouteId__3493CFA7" FromRole="Route" ToRole="Outlets" />
+        </EntityType>
+        <EntityType Name="RouteHasOutlet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="VisitStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OutletId" Type="Int32" />
+          <Property Name="VanId" Type="Int32" />
+          <NavigationProperty Name="Outlet" Relationship="Self.FK__RouteHasO__Outle__3E1D39E1" FromRole="RouteHasOutlets" ToRole="Outlets" />
+          <NavigationProperty Name="User" Relationship="Self.FK__RouteHasO__UserI__3D2915A8" FromRole="RouteHasOutlets" ToRole="Users" />
+          <NavigationProperty Name="Van" Relationship="Self.FK__RouteHasO__VanId__3F115E1A" FromRole="RouteHasOutlets" ToRole="Van" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NIC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Passwords" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ResidenceNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Lane" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Expenses" Relationship="Self.FK__Expenses__UserId__2EDAF651" FromRole="Users" ToRole="Expenses" />
+          <NavigationProperty Name="Images" Relationship="Self.FK__Images__UserId__2FCF1A8A" FromRole="Users" ToRole="Images" />
+          <NavigationProperty Name="Leaves" Relationship="Self.FK__Leave__UserId__30C33EC3" FromRole="Users" ToRole="Leave" />
+          <NavigationProperty Name="LoginDevices" Relationship="Self.FK__LoginDevi__UserI__31B762FC" FromRole="Users" ToRole="LoginDevice" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__UserId__32AB8735" FromRole="Users" ToRole="Orders" />
+          <NavigationProperty Name="Qualifications" Relationship="Self.FK__Qualifica__UserI__395884C4" FromRole="Users" ToRole="Qualifications" />
+          <NavigationProperty Name="Roles" Relationship="Self.FK__Role__UserId__3C34F16F" FromRole="Users" ToRole="Role" />
+          <NavigationProperty Name="RouteHasOutlets" Relationship="Self.FK__RouteHasO__UserI__3D2915A8" FromRole="Users" ToRole="RouteHasOutlets" />
+          <NavigationProperty Name="Messages" Relationship="Self.ReceiveMessages" FromRole="Users" ToRole="Messages" />
+          <NavigationProperty Name="Messages1" Relationship="Self.SendMessages" FromRole="Users" ToRole="Messages" />
+        </EntityType>
+        <EntityType Name="Van">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VanType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RegistrationNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RouteHasOutlets" Relationship="Self.FK__RouteHasO__VanId__3F115E1A" FromRole="Van" ToRole="RouteHasOutlets" />
+          <NavigationProperty Name="VanProducts" Relationship="Self.FK__VanProduc__VanId__46B27FE2" FromRole="Van" ToRole="VanProducts" />
+          <NavigationProperty Name="POSMs" Relationship="Self.VanPOSM" FromRole="Van" ToRole="POSM" />
+        </EntityType>
+        <EntityType Name="VanOrderProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="Int32" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="ProductQuantity" Type="Int32" />
+          <Property Name="OrderType" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__VanOrderP__Order__41EDCAC5" FromRole="VanOrderProducts" ToRole="Orders" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__VanOrderP__Produ__42E1EEFE" FromRole="VanOrderProducts" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="VanProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VanId" Type="Int32" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="VanQuantity" Type="Int32" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__VanProduc__Produ__45BE5BA9" FromRole="VanProducts" ToRole="Product" />
+          <NavigationProperty Name="Van" Relationship="Self.FK__VanProduc__VanId__46B27FE2" FromRole="VanProducts" ToRole="Van" />
+        </EntityType>
+        <Association Name="FK__Expenses__UserId__2EDAF651">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Expenses" Type="Self.Expens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Expenses">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Images__UserId__2FCF1A8A">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Images" Type="Self.Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Images">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Leave__UserId__30C33EC3">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Leave" Type="Self.Leave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Leave">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LoginDevi__UserI__31B762FC">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="LoginDevice" Type="Self.LoginDevice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LoginDevice">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__OutletId__339FAB6E">
+          <End Role="Outlets" Type="Self.Outlet" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Outlets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="OutletId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__UserId__32AB8735">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payment__OrderId__367C1819">
+          <End Role="Orders" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VanOrderP__Order__41EDCAC5">
+          <End Role="Orders" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="VanOrderProducts" Type="Self.VanOrderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VanOrderProducts">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Outlets__RouteId__3493CFA7">
+          <End Role="Route" Type="Self.Route" Multiplicity="0..1" />
+          <End Role="Outlets" Type="Self.Outlet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Outlets">
+              <PropertyRef Name="RouteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Outstandi__Outle__3587F3E0">
+          <End Role="Outlets" Type="Self.Outlet" Multiplicity="0..1" />
+          <End Role="Outstanding" Type="Self.Outstanding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Outlets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Outstanding">
+              <PropertyRef Name="OutletId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RouteHasO__Outle__3E1D39E1">
+          <End Role="Outlets" Type="Self.Outlet" Multiplicity="0..1" />
+          <End Role="RouteHasOutlets" Type="Self.RouteHasOutlet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Outlets">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RouteHasOutlets">
+              <PropertyRef Name="OutletId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VanOrderP__Produ__42E1EEFE">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="VanOrderProducts" Type="Self.VanOrderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VanOrderProducts">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VanProduc__Produ__45BE5BA9">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="VanProducts" Type="Self.VanProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VanProducts">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Qualifica__UserI__395884C4">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Qualifications" Type="Self.Qualification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Qualifications">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Role__UserId__3C34F16F">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Role" Type="Self.Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Role">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RouteHasO__UserI__3D2915A8">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="RouteHasOutlets" Type="Self.RouteHasOutlet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RouteHasOutlets">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RouteHasO__VanId__3F115E1A">
+          <End Role="Van" Type="Self.Van" Multiplicity="0..1" />
+          <End Role="RouteHasOutlets" Type="Self.RouteHasOutlet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Van">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RouteHasOutlets">
+              <PropertyRef Name="VanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VanProduc__VanId__46B27FE2">
+          <End Role="Van" Type="Self.Van" Multiplicity="0..1" />
+          <End Role="VanProducts" Type="Self.VanProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Van">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VanProducts">
+              <PropertyRef Name="VanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProductCompetitorItems">
+          <End Role="CompetitorItems" Type="Self.CompetitorItem" Multiplicity="*" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+        </Association>
+        <Association Name="ReceiveMessages">
+          <End Role="Messages" Type="Self.Message" Multiplicity="*" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+        </Association>
+        <Association Name="SendMessages">
+          <End Role="Messages" Type="Self.Message" Multiplicity="*" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+        </Association>
+        <Association Name="VanPOSM">
+          <End Role="POSM" Type="Self.POSM" Multiplicity="*" />
+          <End Role="Van" Type="Self.Van" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="SalesForceEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CompetitorItems" EntityType="Self.CompetitorItem" />
+          <EntitySet Name="Expenses" EntityType="Self.Expens" />
+          <EntitySet Name="Images" EntityType="Self.Image" />
+          <EntitySet Name="Leaves" EntityType="Self.Leave" />
+          <EntitySet Name="LoginDevices" EntityType="Self.LoginDevice" />
+          <EntitySet Name="Messages" EntityType="Self.Message" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Outlets" EntityType="Self.Outlet" />
+          <EntitySet Name="Outstandings" EntityType="Self.Outstanding" />
+          <EntitySet Name="Payments" EntityType="Self.Payment" />
+          <EntitySet Name="POSMs" EntityType="Self.POSM" />
+          <EntitySet Name="Privilages" EntityType="Self.Privilage" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Qualifications" EntityType="Self.Qualification" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="Routes" EntityType="Self.Route" />
+          <EntitySet Name="RouteHasOutlets" EntityType="Self.RouteHasOutlet" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Vans" EntityType="Self.Van" />
+          <EntitySet Name="VanOrderProducts" EntityType="Self.VanOrderProduct" />
+          <EntitySet Name="VanProducts" EntityType="Self.VanProduct" />
+          <AssociationSet Name="FK__Expenses__UserId__2EDAF651" Association="Self.FK__Expenses__UserId__2EDAF651">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Expenses" EntitySet="Expenses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Images__UserId__2FCF1A8A" Association="Self.FK__Images__UserId__2FCF1A8A">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Images" EntitySet="Images" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Leave__UserId__30C33EC3" Association="Self.FK__Leave__UserId__30C33EC3">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Leave" EntitySet="Leaves" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LoginDevi__UserI__31B762FC" Association="Self.FK__LoginDevi__UserI__31B762FC">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="LoginDevice" EntitySet="LoginDevices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__OutletId__339FAB6E" Association="Self.FK__Orders__OutletId__339FAB6E">
+            <End Role="Outlets" EntitySet="Outlets" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__UserId__32AB8735" Association="Self.FK__Orders__UserId__32AB8735">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payment__OrderId__367C1819" Association="Self.FK__Payment__OrderId__367C1819">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Payment" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VanOrderP__Order__41EDCAC5" Association="Self.FK__VanOrderP__Order__41EDCAC5">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="VanOrderProducts" EntitySet="VanOrderProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Outlets__RouteId__3493CFA7" Association="Self.FK__Outlets__RouteId__3493CFA7">
+            <End Role="Route" EntitySet="Routes" />
+            <End Role="Outlets" EntitySet="Outlets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Outstandi__Outle__3587F3E0" Association="Self.FK__Outstandi__Outle__3587F3E0">
+            <End Role="Outlets" EntitySet="Outlets" />
+            <End Role="Outstanding" EntitySet="Outstandings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RouteHasO__Outle__3E1D39E1" Association="Self.FK__RouteHasO__Outle__3E1D39E1">
+            <End Role="Outlets" EntitySet="Outlets" />
+            <End Role="RouteHasOutlets" EntitySet="RouteHasOutlets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VanOrderP__Produ__42E1EEFE" Association="Self.FK__VanOrderP__Produ__42E1EEFE">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="VanOrderProducts" EntitySet="VanOrderProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VanProduc__Produ__45BE5BA9" Association="Self.FK__VanProduc__Produ__45BE5BA9">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="VanProducts" EntitySet="VanProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Qualifica__UserI__395884C4" Association="Self.FK__Qualifica__UserI__395884C4">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Qualifications" EntitySet="Qualifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Role__UserId__3C34F16F" Association="Self.FK__Role__UserId__3C34F16F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Role" EntitySet="Roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RouteHasO__UserI__3D2915A8" Association="Self.FK__RouteHasO__UserI__3D2915A8">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="RouteHasOutlets" EntitySet="RouteHasOutlets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RouteHasO__VanId__3F115E1A" Association="Self.FK__RouteHasO__VanId__3F115E1A">
+            <End Role="Van" EntitySet="Vans" />
+            <End Role="RouteHasOutlets" EntitySet="RouteHasOutlets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VanProduc__VanId__46B27FE2" Association="Self.FK__VanProduc__VanId__46B27FE2">
+            <End Role="Van" EntitySet="Vans" />
+            <End Role="VanProducts" EntitySet="VanProducts" />
+          </AssociationSet>
+          <AssociationSet Name="ProductCompetitorItems" Association="Self.ProductCompetitorItems">
+            <End Role="CompetitorItems" EntitySet="CompetitorItems" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="ReceiveMessages" Association="Self.ReceiveMessages">
+            <End Role="Messages" EntitySet="Messages" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="SendMessages" Association="Self.SendMessages">
+            <End Role="Messages" EntitySet="Messages" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="VanPOSM" Association="Self.VanPOSM">
+            <End Role="POSM" EntitySet="POSMs" />
+            <End Role="Van" EntitySet="Vans" />
+          </AssociationSet>
+          <FunctionImport Name="AddExpense">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="Amount" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="AddLeave">
+            <Parameter Name="StartingDate" Mode="In" Type="String" />
+            <Parameter Name="EndingDate" Mode="In" Type="String" />
+            <Parameter Name="Reason" Mode="In" Type="String" />
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="AddOutletsOfRoutes" ReturnType="Collection(Int32)">
+            <Parameter Name="RouteId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="AddProductsToVan">
+            <Parameter Name="VanId" Mode="In" Type="Int32" />
+            <Parameter Name="ProductId" Mode="In" Type="Int32" />
+            <Parameter Name="VanQuantity" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="AddVanProducts">
+            <Parameter Name="VanId" Mode="In" Type="Int32" />
+            <Parameter Name="ProductId" Mode="In" Type="Int32" />
+            <Parameter Name="VanQuantity" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="AllOutletsDetails" ReturnType="Collection(Model.AllOutletsDetails_Result)" />
+          <FunctionImport Name="AvailableVanProducts" ReturnType="Collection(Model.AvailableVanProducts_Result)">
+            <Parameter Name="VanId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CreateOrder">
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="OutletId" Mode="In" Type="Int32" />
+            <Parameter Name="DeliveryDate" Mode="In" Type="String" />
+            <Parameter Name="Remarks" Mode="In" Type="String" />
+            <Parameter Name="Longitude" Mode="In" Type="Double" />
+            <Parameter Name="Latitude" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="CreateOutlet">
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="ContactNo" Mode="In" Type="String" />
+            <Parameter Name="Barcode" Mode="In" Type="String" />
+            <Parameter Name="Longitude" Mode="In" Type="Double" />
+            <Parameter Name="Latitude" Mode="In" Type="Double" />
+            <Parameter Name="OwnerName" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="String" />
+            <Parameter Name="RouteId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CreateOutstanding">
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="OutletId" Mode="In" Type="Int32" />
+            <Parameter Name="Amount" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="CreatePayment">
+            <Parameter Name="OrderId" Mode="In" Type="Int32" />
+            <Parameter Name="PaymentType" Mode="In" Type="String" />
+            <Parameter Name="Amount" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="CreateProduct">
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Brand" Mode="In" Type="String" />
+            <Parameter Name="Category" Mode="In" Type="String" />
+            <Parameter Name="ManufacturePrice" Mode="In" Type="Double" />
+            <Parameter Name="RetailPrice" Mode="In" Type="Double" />
+            <Parameter Name="Quantity" Mode="In" Type="Int32" />
+            <Parameter Name="DiscountType" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="createProductsToVan">
+            <Parameter Name="VanId" Mode="In" Type="Int32" />
+            <Parameter Name="ProductId" Mode="In" Type="Int32" />
+            <Parameter Name="VanQuantity" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CreateRoute">
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CreateRouteHasOutlets">
+            <Parameter Name="Date" Mode="In" Type="DateTime" />
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="OutletId" Mode="In" Type="Int32" />
+            <Parameter Name="VanId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CreateUser">
+            <Parameter Name="NIC" Mode="In" Type="String" />
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="ResidenceNo" Mode="In" Type="String" />
+            <Parameter Name="Lane" Mode="In" Type="String" />
+            <Parameter Name="City" Mode="In" Type="String" />
+            <Parameter Name="ContactNo" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="UserType" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CreateVan">
+            <Parameter Name="VanType" Mode="In" Type="String" />
+            <Parameter Name="RegistrationNo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CreateVanOrder">
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="OutletId" Mode="In" Type="Int32" />
+            <Parameter Name="Remarks" Mode="In" Type="String" />
+            <Parameter Name="Longitude" Mode="In" Type="Double" />
+            <Parameter Name="Latitude" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="CreateVanOrderProducts">
+            <Parameter Name="OrderId" Mode="In" Type="Int32" />
+            <Parameter Name="productId" Mode="In" Type="Int32" />
+            <Parameter Name="ProductQuantity" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CreateVanOrderProducts2">
+            <Parameter Name="OrderId" Mode="In" Type="Int32" />
+            <Parameter Name="productId" Mode="In" Type="Int32" />
+            <Parameter Name="ProductQuantity" Mode="In" Type="Int32" />
+            <Parameter Name="OrderType" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteProduct">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteRoute">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteVan">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ExpensesDetails" ReturnType="Collection(Model.ExpensesDetails_Result)" />
+          <FunctionImport Name="GetOrderId" ReturnType="Collection(Int32)">
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="OutletId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetProductPrice" ReturnType="Collection(Double)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetVanId" ReturnType="Collection(Int32)">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="LatestOutstanding" ReturnType="Collection(Double)">
+            <Parameter Name="OutletId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="LeaveDetails" ReturnType="Collection(Model.LeaveDetails_Result)" />
+          <FunctionImport Name="OrderedProducts" ReturnType="Collection(Model.OrderedProducts_Result)">
+            <Parameter Name="OutletId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="OutletDetails" ReturnType="Collection(Model.OutletDetails_Result)" />
+          <FunctionImport Name="OutletsOfTheRoute" ReturnType="Collection(Model.OutletsOfTheRoute_Result)">
+            <Parameter Name="RouteId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="OutletsSalesSummary" ReturnType="Collection(Model.OutletsSalesSummary_Result)">
+            <Parameter Name="OutletId" Mode="In" Type="Int32" />
+            <Parameter Name="Month" Mode="In" Type="Int32" />
+            <Parameter Name="Year" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="OutstandingDetails" ReturnType="Collection(Model.OutstandingDetails_Result)">
+            <Parameter Name="OutletId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ProductById" ReturnType="Collection(Model.ProductById_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ProductDetails" ReturnType="Collection(Model.ProductDetails_Result)" />
+          <FunctionImport Name="RouteDetails" ReturnType="Collection(Model.RouteDetails_Result)" />
+          <FunctionImport Name="RouteDetailsById" ReturnType="Collection(Model.RouteDetailsById_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RoutesSalesSummary" ReturnType="Collection(Model.RoutesSalesSummary_Result)">
+            <Parameter Name="RouteId" Mode="In" Type="Int32" />
+            <Parameter Name="Month" Mode="In" Type="Int32" />
+            <Parameter Name="Year" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateExpenses">
+            <Parameter Name="ExpenseId" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateLeave">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateOutlets">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="ContactNo" Mode="In" Type="String" />
+            <Parameter Name="Longitude" Mode="In" Type="Double" />
+            <Parameter Name="Latitude" Mode="In" Type="Double" />
+            <Parameter Name="OwnerName" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="String" />
+            <Parameter Name="RouteId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateProduct">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Brand" Mode="In" Type="String" />
+            <Parameter Name="Category" Mode="In" Type="String" />
+            <Parameter Name="ManufacturePrice" Mode="In" Type="Double" />
+            <Parameter Name="RetailPrice" Mode="In" Type="Double" />
+            <Parameter Name="Quantity" Mode="In" Type="Int32" />
+            <Parameter Name="DiscountType" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateProductAfterOrder">
+            <Parameter Name="ProductQuantity" Mode="In" Type="Int32" />
+            <Parameter Name="ProductId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateRoute">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateUser">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="NIC" Mode="In" Type="String" />
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Passwords" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="ResidenceNo" Mode="In" Type="String" />
+            <Parameter Name="Lane" Mode="In" Type="String" />
+            <Parameter Name="City" Mode="In" Type="String" />
+            <Parameter Name="ContactNo" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="UserType" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateVan">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="VanType" Mode="In" Type="String" />
+            <Parameter Name="RegistrationNo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateVanProductAfterOrder">
+            <Parameter Name="ProductQuantity" Mode="In" Type="Int32" />
+            <Parameter Name="ProductId" Mode="In" Type="Int32" />
+            <Parameter Name="VanId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UserById" ReturnType="Collection(Model.UserById_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UserDetails" ReturnType="Collection(Model.UserDetails_Result)" />
+          <FunctionImport Name="UsersExpensesDetails" ReturnType="Collection(Model.UsersExpensesDetails_Result)">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UsersLeaveDetails" ReturnType="Collection(Model.UsersLeaveDetails_Result)">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UsersOutlets" ReturnType="Collection(Int32)">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UsersSalesSummary" ReturnType="Collection(Model.UsersSalesSummary_Result)">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="Month" Mode="In" Type="Int32" />
+            <Parameter Name="Year" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UsersTodayOutelts" ReturnType="Collection(Model.UsersTodayOutelts_Result)">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UsersVanProductDetails" ReturnType="Collection(Model.UsersVanProductDetails_Result)">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="OutletId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="VanDetails" ReturnType="Collection(Model.VanDetails_Result)" />
+          <FunctionImport Name="VanDetailsById" ReturnType="Collection(Model.VanDetailsById_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="VanProductDetails" ReturnType="Collection(Model.VanProductDetails_Result)">
+            <Parameter Name="VanId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="AllOutletsDetails_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ContactNo" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Barcode" Nullable="true" MaxLength="25" />
+          <Property Type="Double" Name="Longitude" Nullable="true" />
+          <Property Type="Double" Name="Latitude" Nullable="true" />
+          <Property Type="String" Name="OwnerName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="RouteId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="AvailableVanProducts_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Brand" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Category" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="VanQuantity" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="ExpensesDetails_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="100" />
+          <Property Type="Double" Name="Amount" Nullable="true" />
+          <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="LeaveDetails_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="StartingDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EndingDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Reason" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="OrderedProducts_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Brand" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="RetailPrice" Nullable="true" />
+          <Property Type="Double" Name="DiscountType" Nullable="true" />
+          <Property Type="String" Name="Category" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="ManufacturePrice" Nullable="true" />
+          <Property Type="Int32" Name="Quantity" Nullable="true" />
+          <Property Type="String" Name="Image" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="OutletDetails_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ContactNo" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Barcode" Nullable="true" MaxLength="25" />
+          <Property Type="Double" Name="Longitude" Nullable="true" />
+          <Property Type="Double" Name="Latitude" Nullable="true" />
+          <Property Type="String" Name="OwnerName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="RouteId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="OutletsOfTheRoute_Result">
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="Longitude" Nullable="true" />
+          <Property Type="Double" Name="Latitude" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="OutletsSalesSummary_Result">
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Brand" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="TotalQuantity" Nullable="true" />
+          <Property Type="Double" Name="Amount" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="OutstandingDetails_Result">
+          <Property Type="Double" Name="Amount" Nullable="true" />
+          <Property Type="Int32" Name="OutletId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="ProductById_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Brand" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Category" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="ManufacturePrice" Nullable="true" />
+          <Property Type="Double" Name="RetailPrice" Nullable="true" />
+          <Property Type="Int32" Name="Quantity" Nullable="true" />
+          <Property Type="Double" Name="DiscountType" Nullable="true" />
+          <Property Type="String" Name="Image" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="ProductDetails_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Brand" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Category" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="ManufacturePrice" Nullable="true" />
+          <Property Type="Double" Name="RetailPrice" Nullable="true" />
+          <Property Type="Int32" Name="Quantity" Nullable="true" />
+          <Property Type="Double" Name="DiscountType" Nullable="true" />
+          <Property Type="String" Name="Image" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="RouteDetails_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="RouteDetailsById_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="RoutesSalesSummary_Result">
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Brand" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="TotalQuantity" Nullable="true" />
+          <Property Type="Double" Name="Amount" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="UserById_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="NIC" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Passwords" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ResidenceNo" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Lane" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ContactNo" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="6" />
+          <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Image" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="UserDetails_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="NIC" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Passwords" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ResidenceNo" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Lane" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ContactNo" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="6" />
+          <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Image" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="UsersExpensesDetails_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="100" />
+          <Property Type="Double" Name="Amount" Nullable="true" />
+          <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="UsersLeaveDetails_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="StartingDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EndingDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Reason" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="UsersSalesSummary_Result">
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Brand" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="TotalQuantity" Nullable="true" />
+          <Property Type="Double" Name="Amount" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="UsersTodayOutelts_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ContactNo" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Barcode" Nullable="true" MaxLength="25" />
+          <Property Type="Double" Name="Longitude" Nullable="true" />
+          <Property Type="Double" Name="Latitude" Nullable="true" />
+          <Property Type="String" Name="OwnerName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="RouteId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="UsersVanProductDetails_Result">
+          <Property Type="Int32" Name="ProductId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Brand" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Category" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="ManufacturePrice" Nullable="true" />
+          <Property Type="Double" Name="RetailPrice" Nullable="true" />
+          <Property Type="Int32" Name="VanQuantity" Nullable="true" />
+          <Property Type="Double" Name="DiscountType" Nullable="true" />
+          <Property Type="String" Name="Image" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="VanDetails_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="VanType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="RegistrationNo" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="VanDetailsById_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="VanType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="RegistrationNo" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="VanProductDetails_Result">
+          <Property Type="Int32" Name="ProductId" Nullable="true" />
+          <Property Type="Int32" Name="VanQuantity" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="SalesForceEntities">
+          <EntitySetMapping Name="CompetitorItems">
+            <EntityTypeMapping TypeName="Model.CompetitorItem">
+              <MappingFragment StoreEntitySet="CompetitorItems">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Expenses">
+            <EntityTypeMapping TypeName="Model.Expens">
+              <MappingFragment StoreEntitySet="Expenses">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Images">
+            <EntityTypeMapping TypeName="Model.Image">
+              <MappingFragment StoreEntitySet="Images">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image1" ColumnName="Image" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Leaves">
+            <EntityTypeMapping TypeName="Model.Leave">
+              <MappingFragment StoreEntitySet="Leave">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StartingDate" ColumnName="StartingDate" />
+                <ScalarProperty Name="EndingDate" ColumnName="EndingDate" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginDevices">
+            <EntityTypeMapping TypeName="Model.LoginDevice">
+              <MappingFragment StoreEntitySet="LoginDevice">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DeviceKey" ColumnName="DeviceKey" />
+                <ScalarProperty Name="BatteryLevel" ColumnName="BatteryLevel" />
+                <ScalarProperty Name="NetworkStatus" ColumnName="NetworkStatus" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="Model.Message">
+              <MappingFragment StoreEntitySet="Messages">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Messages" ColumnName="Messages" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="Model.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="DeliveredDate" ColumnName="DeliveredDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="OutletId" ColumnName="OutletId" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Date2" ColumnName="Date2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Outlets">
+            <EntityTypeMapping TypeName="Model.Outlet">
+              <MappingFragment StoreEntitySet="Outlets">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RouteId" ColumnName="RouteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Outstandings">
+            <EntityTypeMapping TypeName="Model.Outstanding">
+              <MappingFragment StoreEntitySet="Outstanding">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="OutletId" ColumnName="OutletId" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="Model.Payment">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POSMs">
+            <EntityTypeMapping TypeName="Model.POSM">
+              <MappingFragment StoreEntitySet="POSM">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Privilages">
+            <EntityTypeMapping TypeName="Model.Privilage">
+              <MappingFragment StoreEntitySet="Privilage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="Model.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="ManufacturePrice" ColumnName="ManufacturePrice" />
+                <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="DiscountType" ColumnName="DiscountType" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Qualifications">
+            <EntityTypeMapping TypeName="Model.Qualification">
+              <MappingFragment StoreEntitySet="Qualifications">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Qualification1" ColumnName="Qualification" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="Model.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Routes">
+            <EntityTypeMapping TypeName="Model.Route">
+              <MappingFragment StoreEntitySet="Route">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RouteHasOutlets">
+            <EntityTypeMapping TypeName="Model.RouteHasOutlet">
+              <MappingFragment StoreEntitySet="RouteHasOutlets">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="VisitStatus" ColumnName="VisitStatus" />
+                <ScalarProperty Name="OutletId" ColumnName="OutletId" />
+                <ScalarProperty Name="VanId" ColumnName="VanId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Model.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NIC" ColumnName="NIC" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Passwords" ColumnName="Passwords" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="ResidenceNo" ColumnName="ResidenceNo" />
+                <ScalarProperty Name="Lane" ColumnName="Lane" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vans">
+            <EntityTypeMapping TypeName="Model.Van">
+              <MappingFragment StoreEntitySet="Van">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VanType" ColumnName="VanType" />
+                <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VanOrderProducts">
+            <EntityTypeMapping TypeName="Model.VanOrderProduct">
+              <MappingFragment StoreEntitySet="VanOrderProducts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductQuantity" ColumnName="ProductQuantity" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VanProducts">
+            <EntityTypeMapping TypeName="Model.VanProduct">
+              <MappingFragment StoreEntitySet="VanProducts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VanId" ColumnName="VanId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="VanQuantity" ColumnName="VanQuantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ProductCompetitorItems" TypeName="Model.ProductCompetitorItems" StoreEntitySet="ProductCompetitorItems">
+            <EndProperty Name="CompetitorItems">
+              <ScalarProperty Name="Id" ColumnName="CompetitorItemsId" />
+            </EndProperty>
+            <EndProperty Name="Product">
+              <ScalarProperty Name="Id" ColumnName="ProductId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ReceiveMessages" TypeName="Model.ReceiveMessages" StoreEntitySet="ReceiveMessages">
+            <EndProperty Name="Messages">
+              <ScalarProperty Name="Id" ColumnName="MessageId" />
+            </EndProperty>
+            <EndProperty Name="Users">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="SendMessages" TypeName="Model.SendMessages" StoreEntitySet="SendMessages">
+            <EndProperty Name="Messages">
+              <ScalarProperty Name="Id" ColumnName="MessageId" />
+            </EndProperty>
+            <EndProperty Name="Users">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="VanPOSM" TypeName="Model.VanPOSM" StoreEntitySet="VanPOSM">
+            <EndProperty Name="POSM">
+              <ScalarProperty Name="Id" ColumnName="POSMId" />
+            </EndProperty>
+            <EndProperty Name="Van">
+              <ScalarProperty Name="Id" ColumnName="VanId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="AddExpense" FunctionName="Model.Store.AddExpense" />
+          <FunctionImportMapping FunctionImportName="AddLeave" FunctionName="Model.Store.AddLeave" />
+          <FunctionImportMapping FunctionImportName="AddOutletsOfRoutes" FunctionName="Model.Store.AddOutletsOfRoutes" />
+          <FunctionImportMapping FunctionImportName="AddProductsToVan" FunctionName="Model.Store.AddProductsToVan" />
+          <FunctionImportMapping FunctionImportName="AddVanProducts" FunctionName="Model.Store.AddVanProducts" />
+          <FunctionImportMapping FunctionImportName="AllOutletsDetails" FunctionName="Model.Store.AllOutletsDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.AllOutletsDetails_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RouteId" ColumnName="RouteId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="AvailableVanProducts" FunctionName="Model.Store.AvailableVanProducts">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.AvailableVanProducts_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="VanQuantity" ColumnName="VanQuantity" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CreateOrder" FunctionName="Model.Store.CreateOrder" />
+          <FunctionImportMapping FunctionImportName="CreateOutlet" FunctionName="Model.Store.CreateOutlet" />
+          <FunctionImportMapping FunctionImportName="CreateOutstanding" FunctionName="Model.Store.CreateOutstanding" />
+          <FunctionImportMapping FunctionImportName="CreatePayment" FunctionName="Model.Store.CreatePayment" />
+          <FunctionImportMapping FunctionImportName="CreateProduct" FunctionName="Model.Store.CreateProduct" />
+          <FunctionImportMapping FunctionImportName="createProductsToVan" FunctionName="Model.Store.createProductsToVan" />
+          <FunctionImportMapping FunctionImportName="CreateRoute" FunctionName="Model.Store.CreateRoute" />
+          <FunctionImportMapping FunctionImportName="CreateRouteHasOutlets" FunctionName="Model.Store.CreateRouteHasOutlets" />
+          <FunctionImportMapping FunctionImportName="CreateUser" FunctionName="Model.Store.CreateUser" />
+          <FunctionImportMapping FunctionImportName="CreateVan" FunctionName="Model.Store.CreateVan" />
+          <FunctionImportMapping FunctionImportName="CreateVanOrder" FunctionName="Model.Store.CreateVanOrder" />
+          <FunctionImportMapping FunctionImportName="CreateVanOrderProducts" FunctionName="Model.Store.CreateVanOrderProducts" />
+          <FunctionImportMapping FunctionImportName="CreateVanOrderProducts2" FunctionName="Model.Store.CreateVanOrderProducts2" />
+          <FunctionImportMapping FunctionImportName="DeleteProduct" FunctionName="Model.Store.DeleteProduct" />
+          <FunctionImportMapping FunctionImportName="DeleteRoute" FunctionName="Model.Store.DeleteRoute" />
+          <FunctionImportMapping FunctionImportName="DeleteVan" FunctionName="Model.Store.DeleteVan" />
+          <FunctionImportMapping FunctionImportName="ExpensesDetails" FunctionName="Model.Store.ExpensesDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.ExpensesDetails_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetOrderId" FunctionName="Model.Store.GetOrderId" />
+          <FunctionImportMapping FunctionImportName="GetProductPrice" FunctionName="Model.Store.GetProductPrice" />
+          <FunctionImportMapping FunctionImportName="GetVanId" FunctionName="Model.Store.GetVanId" />
+          <FunctionImportMapping FunctionImportName="LatestOutstanding" FunctionName="Model.Store.LatestOutstanding" />
+          <FunctionImportMapping FunctionImportName="LeaveDetails" FunctionName="Model.Store.LeaveDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.LeaveDetails_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StartingDate" ColumnName="StartingDate" />
+                <ScalarProperty Name="EndingDate" ColumnName="EndingDate" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="OrderedProducts" FunctionName="Model.Store.OrderedProducts">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.OrderedProducts_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+                <ScalarProperty Name="DiscountType" ColumnName="DiscountType" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="ManufacturePrice" ColumnName="ManufacturePrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="OutletDetails" FunctionName="Model.Store.OutletDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.OutletDetails_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RouteId" ColumnName="RouteId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="OutletsOfTheRoute" FunctionName="Model.Store.OutletsOfTheRoute">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.OutletsOfTheRoute_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="OutletsSalesSummary" FunctionName="Model.Store.OutletsSalesSummary">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.OutletsSalesSummary_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="TotalQuantity" ColumnName="TotalQuantity" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="OutstandingDetails" FunctionName="Model.Store.OutstandingDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.OutstandingDetails_Result">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="OutletId" ColumnName="OutletId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ProductById" FunctionName="Model.Store.ProductById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.ProductById_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="ManufacturePrice" ColumnName="ManufacturePrice" />
+                <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="DiscountType" ColumnName="DiscountType" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ProductDetails" FunctionName="Model.Store.ProductDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.ProductDetails_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="ManufacturePrice" ColumnName="ManufacturePrice" />
+                <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="DiscountType" ColumnName="DiscountType" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RouteDetails" FunctionName="Model.Store.RouteDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.RouteDetails_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RouteDetailsById" FunctionName="Model.Store.RouteDetailsById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.RouteDetailsById_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RoutesSalesSummary" FunctionName="Model.Store.RoutesSalesSummary">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.RoutesSalesSummary_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="TotalQuantity" ColumnName="TotalQuantity" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateExpenses" FunctionName="Model.Store.UpdateExpenses" />
+          <FunctionImportMapping FunctionImportName="UpdateLeave" FunctionName="Model.Store.UpdateLeave" />
+          <FunctionImportMapping FunctionImportName="UpdateOutlets" FunctionName="Model.Store.UpdateOutlets" />
+          <FunctionImportMapping FunctionImportName="UpdateProduct" FunctionName="Model.Store.UpdateProduct" />
+          <FunctionImportMapping FunctionImportName="UpdateProductAfterOrder" FunctionName="Model.Store.UpdateProductAfterOrder" />
+          <FunctionImportMapping FunctionImportName="UpdateRoute" FunctionName="Model.Store.UpdateRoute" />
+          <FunctionImportMapping FunctionImportName="UpdateUser" FunctionName="Model.Store.UpdateUser" />
+          <FunctionImportMapping FunctionImportName="UpdateVan" FunctionName="Model.Store.UpdateVan" />
+          <FunctionImportMapping FunctionImportName="UpdateVanProductAfterOrder" FunctionName="Model.Store.UpdateVanProductAfterOrder" />
+          <FunctionImportMapping FunctionImportName="UserById" FunctionName="Model.Store.UserById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.UserById_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NIC" ColumnName="NIC" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Passwords" ColumnName="Passwords" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="ResidenceNo" ColumnName="ResidenceNo" />
+                <ScalarProperty Name="Lane" ColumnName="Lane" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UserDetails" FunctionName="Model.Store.UserDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.UserDetails_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NIC" ColumnName="NIC" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Passwords" ColumnName="Passwords" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="ResidenceNo" ColumnName="ResidenceNo" />
+                <ScalarProperty Name="Lane" ColumnName="Lane" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UsersExpensesDetails" FunctionName="Model.Store.UsersExpensesDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.UsersExpensesDetails_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UsersLeaveDetails" FunctionName="Model.Store.UsersLeaveDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.UsersLeaveDetails_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StartingDate" ColumnName="StartingDate" />
+                <ScalarProperty Name="EndingDate" ColumnName="EndingDate" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UsersOutlets" FunctionName="Model.Store.UsersOutlets" />
+          <FunctionImportMapping FunctionImportName="UsersSalesSummary" FunctionName="Model.Store.UsersSalesSummary">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.UsersSalesSummary_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="TotalQuantity" ColumnName="TotalQuantity" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UsersTodayOutelts" FunctionName="Model.Store.UsersTodayOutelts">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.UsersTodayOutelts_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RouteId" ColumnName="RouteId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UsersVanProductDetails" FunctionName="Model.Store.UsersVanProductDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.UsersVanProductDetails_Result">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="ManufacturePrice" ColumnName="ManufacturePrice" />
+                <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+                <ScalarProperty Name="VanQuantity" ColumnName="VanQuantity" />
+                <ScalarProperty Name="DiscountType" ColumnName="DiscountType" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VanDetails" FunctionName="Model.Store.VanDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.VanDetails_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VanType" ColumnName="VanType" />
+                <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VanDetailsById" FunctionName="Model.Store.VanDetailsById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.VanDetailsById_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VanType" ColumnName="VanType" />
+                <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VanProductDetails" FunctionName="Model.Store.VanProductDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.VanProductDetails_Result">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="VanQuantity" ColumnName="VanQuantity" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

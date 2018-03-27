@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="42864b483d344a249a20a0444f823b82" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.CompetitorItem" Width="1.5" PointX="6" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Expens" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Image" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Leave" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LoginDevice" Width="1.5" PointX="5.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Message" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Order" Width="1.5" PointX="8.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Outlet" Width="1.5" PointX="6" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Outstanding" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Payment" Width="1.5" PointX="10.5" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.POSM" Width="1.5" PointX="3.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Privilage" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Product" Width="1.5" PointX="8.25" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Qualification" Width="1.5" PointX="5.25" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="5.25" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Route" Width="1.5" PointX="3.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RouteHasOutlet" Width="1.5" PointX="8.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Van" Width="1.5" PointX="6" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.VanOrderProduct" Width="1.5" PointX="10.5" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.VanProduct" Width="1.5" PointX="10.5" PointY="24.875" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK__Expenses__UserId__2EDAF651" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Images__UserId__2FCF1A8A" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Leave__UserId__30C33EC3" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__LoginDevi__UserI__31B762FC" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Orders__OutletId__339FAB6E" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Orders__UserId__32AB8735" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Payment__OrderId__367C1819" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__VanOrderP__Order__41EDCAC5" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Outlets__RouteId__3493CFA7" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Outstandi__Outle__3587F3E0" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__RouteHasO__Outle__3E1D39E1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__VanOrderP__Produ__42E1EEFE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__VanProduc__Produ__45BE5BA9" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Qualifica__UserI__395884C4" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Role__UserId__3C34F16F" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__RouteHasO__UserI__3D2915A8" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__RouteHasO__VanId__3F115E1A" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__VanProduc__VanId__46B27FE2" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ProductCompetitorItems" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ReceiveMessages" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SendMessages" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.VanPOSM" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
